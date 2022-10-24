@@ -60,14 +60,15 @@ while True:
         # Moving objects
         for dalek in daleks.list_of_daleks[:dalek_counter]:
             g_utils.blit_asteroid()
-            # Hvorfor laver den game over før dalek rammer bunden hvis man griber de første?
-            if dalek.dalek_rect.bottom >= screen_rect.bottom:
-                g_utils.game_over()
-                break
 
             if ship.ship_collision(dalek.dalek_rect):
                 g_stats.score += 1
                 dalek.killme()
+
+            # Hvorfor laver den game over før dalek rammer bunden hvis man griber de første?
+            if dalek.dalek_rect.bottom >= screen_rect.bottom:
+                g_utils.game_over()
+                break
 
             else:
                 dalek.dalek_rect.centery += dalek.speed

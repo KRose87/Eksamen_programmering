@@ -43,6 +43,6 @@ class GameUtils:
     def game_over(self):
         self.screen.fill(self.settings.black)
         self.screen.blit(self.go_text, (self.settings.screen_width/4, self.settings.screen_height/3))
-        text = self.myfont.render(f"Press 'S' for menu", self.settings.black, self.settings.white)
-        text_rect = text.get_rect(midbottom=(self.settings.screen_width/2, self.settings.screen_height/7))
+        text = self.myfont.render(f"Press 'S' for menu or 'Q' to quit game", self.settings.black, self.settings.white)
+        text_rect = text.get_rect(bottom=(self.settings.screen_width/2, self.settings.screen_height/7))
         self.screen.blit(text, text_rect)
